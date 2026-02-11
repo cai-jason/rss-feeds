@@ -58,6 +58,13 @@ feeds_google_ai: ## Generate RSS feed for Google AI Blog
 	$(Q)python feed_generators/google_ai_blog.py
 	$(call print_success,Google AI feed generated)
 
+.PHONY: feeds_openai_engineering
+feeds_openai_engineering: ## Generate RSS feed for OpenAI Engineering
+	$(call check_venv)
+	$(call print_info,Generating OpenAI Engineering feed)
+	$(Q)python feed_generators/openai_eng_blog.py
+	$(call print_success,OpenAI Engineering feed generated)
+
 .PHONY: feeds_openai_research
 feeds_openai_research: ## Generate RSS feed for OpenAI Research
 	$(call check_venv)
